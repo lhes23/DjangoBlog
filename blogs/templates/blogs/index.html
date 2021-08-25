@@ -1,4 +1,10 @@
 {% extends 'blogs/layout.html' %}
 {% block content %}
     <h1>This is the Homepage</h1>
+    <ul>
+        {% for post in posts %}
+            <li> <a href="{% url 'blogs:post' post.id %}">{{post.title}}</a></li>   
+        {% endfor %}
+    </ul>
+    <a href="{% url 'blogs:create'%}">Add Post</a>
 {% endblock content %}
