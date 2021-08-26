@@ -4,7 +4,8 @@ from .forms import *
 from django.contrib import messages
 
 def index(request):
-    context = {'posts':Post.objects.all()}
+
+    context = {'posts':Post.objects.all(),'users':User.objects.all()}
     return render(request, 'blogs/index.html',context)
 
 def post(request,post_id):

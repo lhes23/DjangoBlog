@@ -6,6 +6,11 @@
             <li> <a href="{% url 'blogs:post' post.id %}">{{post.title}}</a></li>   
         {% endfor %}
     </ul>
+    <ul>
+        {% for user in users %}
+            <li>{{user.username}}</li>
+        {% endfor %}
+    </ul>
     <a href="{% url 'blogs:create'%}">Add Post</a>
     <a href="{% url 'users:register' %}">Register</a>
     <a href="{% url 'users:index'%}">All Users</a>
